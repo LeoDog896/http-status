@@ -1,0 +1,390 @@
+// Information pulled from https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+[
+    // 1x
+    {
+        "code": 100,
+        "name": "Continue",
+        "description": "This interim response indicates that the client should continue the request or ignore the response if the request is already finished.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/100"
+    },
+    {
+        "code": 101,
+        "name": "Switching Protocols",
+        "description": "This code is sent in response to an Upgrade request header from the client, and indicates the protocol the server is switching to.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/101"
+    },
+    {
+        "code": 102,
+        "name": "Processing",
+        "description": "This code indicates that the server has received and is processing the request, but no response is available yet."
+    },
+    {
+        "code": 103,
+        "name": "Early Hints",
+        "description": "This status code is primarily intended to be used with the Link header, letting the user agent start preloading resources while the server prepares a response.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/103"
+    },
+
+    // 2x
+    {
+        "code": 200,
+        "name": "OK",
+        "description": "The request succeeded. The result meaning of \"success\" depends on the HTTP method.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201"
+    },
+    {
+        "code": 201,
+        "name": "Created",
+        "description": "The request succeeded, and a new resource was created as a result. This is typically the response sent after POST requests, or some PUT requests.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201"
+    },
+    {
+        "code": 202,
+        "name": "Accepted",
+        "description": "The request has been received but not yet acted upon. It is noncommittal, since there is no way in HTTP to later send an asynchronous response indicating the outcome of the request. It is intended for cases where another process or server handles the request, or for batch processing.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202"
+    },
+    {
+        "code": 203,
+        "name": "Non-Authoritative Information",
+        "description": "The request was successful but the enclosed payload has been modified from that of the origin server's 200 (OK) response by a transforming proxy.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/203"
+    },
+    {
+        "code": 204,
+        "name": "No Content",
+        "description": "The server successfully processed the request and is not returning any content.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204"
+    },
+    {
+        "code": 205,
+        "name": "Reset Content",
+        "description": "The server successfully processed the request, but is not returning any content. Unlike a 204 response, this response requires that the requester reset the document view.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/205"
+    },
+    {
+        "code": 206,
+        "name": "Partial Content",
+        "description": "The server is delivering only part of the resource (byte serving) due to a range header sent by the client. The range header is used by HTTP clients to enable resuming of interrupted downloads, or split a download into multiple simultaneous streams.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206"
+    },
+    {
+        "code": 207,
+        "name": "Multi-Status",
+        "description": "The message body that follows is by default an XML message and can contain a number of separate response codes, depending on how many sub-requests were made.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/207"
+    },
+    {
+        "code": 208,
+        "name": "Already Reported",
+        "description": "The members of a DAV binding have already been enumerated in a preceding part of the (multistatus) response, and are not being included again.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/208"
+    },
+    {
+        "code": 226,
+        "name": "IM Used",
+        "description": "The server has fulfilled a request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/226"
+    },
+
+    // 3x
+
+    {
+        "code": 300,
+        "name": "Multiple Choices",
+        "description": "The request has more than one possible response. The user agent or user should choose one of them. (There is no standardized way of choosing one of the responses, but HTML links to the possibilities are recommended so the user can pick.)",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300"
+    },
+    {
+        "code": 301,
+        "name": "Moved Permanently",
+        "description": "The URL of the requested resource has been changed permanently. The new URL is given in the response.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301"
+    },
+    {
+        "code": 302,
+        "name": "Found",
+        "description": "This response code means that the URI of requested resource has been changed temporarily. Further changes in the URI might be made in the future. Therefore, this same URI should be used by the client in future requests.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302"
+    },
+    {
+        "code": 303,
+        "name": "See Other",
+        "description": "The server sent this response to direct the client to get the requested resource at another URI with a GET request.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/303"
+    },
+    {
+        "code": 304,
+        "name": "Not Modified",
+        "description": "This is used for caching purposes. It tells the client that the response has not been modified, so the client can continue to use the same cached version of the response.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304"
+    },
+    {
+        "code": 305,
+        "name": "Use Proxy",
+        "description": "Defined in a previous version of the HTTP specification to indicate that a requested response must be accessed by a proxy. It has been deprecated due to security concerns regarding in-band configuration of a proxy.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/305"
+    },
+    {
+        "code": 306,
+        "name": "Switch Proxy",
+        "description": "No longer used. Originally meant \"Subsequent requests should use the specified proxy.\"",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/306"
+    },
+    {
+        "code": 307,
+        "name": "Temporary Redirect",
+        "description": "The request and all future requests should be repeated using another URI. 307 and 308 (as proposed) parallel the behaviours of 302 and 301, but do not allow the HTTP method to change. So, for example, submitting a form to a permanently redirected resource may continue smoothly.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307"
+    },
+    {
+        "code": 308,
+        "name": "Permanent Redirect",
+        "description": "The request and all future requests should be repeated using another URI. 307 and 308 (as proposed) parallel the behaviours of 302 and 301, but do not allow the HTTP method to change. So, for example, submitting a form to a permanently redirected resource may continue smoothly.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/308"
+    },
+
+    // 4x
+
+    {
+        "code": 400,
+        "name": "Bad Request",
+        "description": "This response means that server could not understand the request due to invalid syntax.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    },
+    {
+        "code": 401,
+        "name": "Unauthorized",
+        "description": "Although the HTTP standard specifies \"unauthorized\", semantically this response means \"unauthenticated\". That is, the client must authenticate itself to get the requested response.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"
+    },
+    {
+        "code": 402,
+        "name": "Payment Required",
+        "description": "This response code is reserved for future use. Initial aim for creating this code was using it for digital payment systems, however this status code is used very rarely and no standard convention exists.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"
+    },
+    {
+        "code": 403,
+        "name": "Forbidden",
+        "description": "The client does not have access rights to the content; that is, it is unauthorized, so the server is refusing to give the requested resource. Unlike 401, the client's identity is known to the server.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+    },
+    {
+        "code": 404,
+        "name": "Not Found",
+        "description": "The server can not find the requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the resource itself does not exist. Servers may also send this response instead of 403 to hide the existence of a resource from an unauthorized client. This response code is probably the most famous one due to its frequent occurrence on the web.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    {
+        "code": 405,
+        "name": "Method Not Allowed",
+        "description": "The request method is known by the server but has been disabled and cannot be used. For example, an API may forbid DELETE-ing a resource. The two mandatory methods, GET and HEAD, must never be disabled and should not return this error code.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405"
+    },
+    {
+        "code": 406,
+        "name": "Not Acceptable",
+        "description": "This response is sent when the web server, after performing server-driven content negotiation, doesn't find any content that conforms to the criteria given by the user agent.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406"
+    },
+    {
+        "code": 407,
+        "name": "Proxy Authentication Required",
+        "description": "This is similar to 401 but authentication is needed to be done by a proxy.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407"
+    },
+    {
+        "code": 408,
+        "name": "Request Timeout",
+        "description": "This response is sent on an idle connection by some servers, even without any previous request by the client. It means that the server would like to shut down this unused connection. This response is used much more since some browsers, like Chrome, Firefox 27+, or IE9, use HTTP pre-connection mechanisms to speed up surfing. Also note that some servers merely shut down the connection without sending this message.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/408"
+    },
+    {
+        "code": 409,
+        "name": "Conflict",
+        "description": "This response is sent when a request conflicts with the current state of the server.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409"
+    },
+    {
+        "code": 410,
+        "name": "Gone",
+        "description": "This response is sent when the requested content has been permanently deleted from server, with no forwarding address. Clients are expected to remove their caches and links to the resource. The HTTP specification intends this status code to be used for \"limited-time, promotional services\". APIs should not feel compelled to indicate resources that have been deleted with this status code.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/410"
+    },
+    {
+        "code": 411,
+        "name": "Length Required",
+        "description": "Server rejected the request because the Content-Length header field is not defined and the server requires it.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/411"
+    },
+    {
+        "code": 412,
+        "name": "Precondition Failed",
+        "description": "The client has indicated preconditions in its headers which the server does not meet.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/412"
+    },
+    {
+        "code": 413,
+        "name": "Payload Too Large",
+        "description": "Request entity is larger than limits defined by server; the server might close the connection or return an Retry-After header field.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413"
+    },
+    {
+        "code": 414,
+        "name": "URI Too Long",
+        "description": "The URI requested by the client is longer than the server is willing to interpret.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/414"
+    },
+    {
+        "code": 415,
+        "name": "Unsupported Media Type",
+        "description": "The media format of the requested data is not supported by the server, so the server is rejecting the request.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/415"
+    },
+    {
+        "code": 416,
+        "name": "Range Not Satisfiable",
+        "description": "The range specified by the Range header field in the request can't be fulfilled; it's possible that the range is outside the size of the target URI's data.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/416"
+    },
+    {
+        "code": 417,
+        "name": "Expectation Failed",
+        "description": "This response code means the expectation indicated by the Expect request header field can't be met by the server.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/417"
+    },
+    {
+        "code": 418,
+        "name": "I'm a teapot",
+        "description": "The server refuses the attempt to brew coffee with a teapot.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418"
+    },
+    {
+        "code": 421,
+        "name": "Misdirected Request",
+        "description": "The request was directed at a server that is not able to produce a response (for example because of connection reuse)."
+    },
+    {
+        "code": 422,
+        "name": "Unprocessable Entity",
+        "description": "The request was well-formed but was unable to be followed due to semantic errors.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422"
+    },
+    {
+        "code": 423,
+        "name": "Locked",
+        "description": "The resource that is being accessed is locked."
+    },
+    {
+        "code": 424,
+        "name": "Failed Dependency",
+        "description": "The request failed due to failure of a previous request (e.g., a PROPPATCH)."
+    },
+    {
+        "code": 425,
+        "name": "Too Early",
+        "description": "Indicates that the server is unwilling to risk processing a request that might be replayed.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/425"
+    },
+    {
+        "code": 426,
+        "name": "Upgrade Required",
+        "description": "The client should switch to a different protocol such as TLS/1.0, given in the Upgrade header field.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/426"
+    },
+    {
+        "code": 428,
+        "name": "Precondition Required",
+        "description": "The origin server requires the request to be conditional. Intended to prevent \"the 'lost update' problem, where a client GETs a resource's state, modifies it, and PUTs it back to the server, when meanwhile a third party has modified the state on the server, leading to a conflict.\"",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/428"
+    },
+    {
+        "code": 429,
+        "name": "Too Many Requests",
+        "description": "The user has sent too many requests in a given amount of time. Intended for use with rate-limiting schemes.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    },
+    {
+        "code": 431,
+        "name": "Request Header Fields Too Large",
+        "description": "The server is unwilling to process the request because either an individual header field, or all the header fields collectively, are too large.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/431"
+    },
+    {
+        "code": 451,
+        "name": "Unavailable For Legal Reasons",
+        "description": "A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource. The code 451 was chosen as a reference to the novel Fahrenheit 451 (see the Acknowledgements in the RFC).",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451"
+    },
+
+    // 5x
+
+    {
+        "code": 500,
+        "name": "Internal Server Error",
+        "description": "The server has encountered a situation it doesn't know how to handle.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+    },
+    {
+        "code": 501,
+        "name": "Not Implemented",
+        "description": "The request method is not supported by the server and cannot be handled. The only methods that servers are required to support (and therefore that must not return this code) are GET and HEAD.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501"
+    },
+    {
+        "code": 502,
+        "name": "Bad Gateway",
+        "description": "This error response means that the server, while working as a gateway to get a response needed to handle the request, got an invalid response.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+    },
+    {
+        "code": 503,
+        "name": "Service Unavailable",
+        "description": "The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded. Note that together with this response, a user-friendly page explaining the problem should be sent. This responses should be used for temporary conditions and the Retry-After: HTTP header should, if possible, contain the estimated time before the recovery of the service. The webmaster must also take care about the caching-related headers that are sent along with this response, as these temporary condition responses should usually not be cached.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    {
+        "code": 504,
+        "name": "Gateway Timeout",
+        "description": "This error response is given when the server is acting as a gateway and cannot get a response in time.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504"
+    },
+    {
+        "code": 505,
+        "name": "HTTP Version Not Supported",
+        "description": "The HTTP version used in the request is not supported by the server.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/505"
+    },
+    {
+        "code": 506,
+        "name": "Variant Also Negotiates",
+        "description": "Transparent content negotiation for the request results in a circular reference.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/506"
+    },
+    {
+        "code": 507,
+        "name": "Insufficient Storage",
+        "description": "The server is unable to store the representation needed to complete the request.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/507"
+    },
+    {
+        "code": 508,
+        "name": "Loop Detected",
+        "description": "The server detected an infinite loop while processing the request.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/508"
+    },
+    {
+        "code": 510,
+        "name": "Not Extended",
+        "description": "Further extensions to the request are required for the server to fulfil it.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/510"
+    },
+    {
+        "code": 511,
+        "name": "Network Authentication Required",
+        "description": "The 511 status code indicates that the client needs to authenticate to gain network access.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/511"
+
+    }
+]
